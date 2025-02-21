@@ -1,12 +1,28 @@
-public class User {
-    private String name;
-    private int age;
-    public User(String name, int age) {
+public abstract class User {
+    protected String id;
+    protected String name;
+    protected String phoneNumber;
+
+    public User(String id, String name, String phoneNumber) {
+        this.id = id;
         this.name = name;
-        this.age = age;
+        this.phoneNumber = phoneNumber;
     }
 
-    public User() {
+    public String getId() {
+        return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + phoneNumber + ")";
+    }
 }
